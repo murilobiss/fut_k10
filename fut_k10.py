@@ -2,40 +2,43 @@ from collections import Counter
 import random
 
 jogadores = {
-    "Rafael": {"posicao": "ATA", "nota": 7, "Presente": "P"},
-    "Murilo": {"posicao": "MZA", "nota": 7, "Presente": "P"},
-    "Everton": {"posicao": "ATA", "nota": 5, "Presente": "P"},
-    "Victor": {"posicao": "MZA", "nota": 10, "Presente": "P"},
-    "Marlon": {"posicao": "ZAG", "nota": 4, "Presente": "P"},
-    "Cattoni": {"posicao": "ZAG", "nota": 5, "Presente": "P"},
-    "Will": {"posicao": "MEI", "nota": 8, "Presente": "P"},
-    "Paulo": {"posicao": "MEI", "nota": 8, "Presente": "P"},
-    "Recka": {"posicao": "ATA", "nota": 5, "Presente": "A"},
-    "Filipe": {"posicao": "MEI", "nota": 8, "Presente": "P"},
-    "Pedro": {"posicao": "MZA", "nota": 8, "Presente": "A"},
-    "Wellington": {"posicao": "MEI", "nota": 7, "Presente": "A"},
-    "Hagi": {"posicao": "MZA", "nota": 5, "Presente": "P"},
-    "Marcel": {"posicao": "MEI", "nota": 7, "Presente": "P"},
-    "Henrique": {"posicao": "MZA", "nota": 6, "Presente": "P"},
-    "Gustavo": {"posicao": "MZA", "nota": 7, "Presente": "P"},
-    "Guima": {"posicao": "MZA", "nota": 5, "Presente": "P"},
-    "Beto": {"posicao": "MZA", "nota": 7, "Presente": "A"},
-    "Rodrigo": {"posicao": "MEI", "nota": 7, "Presente": "A"},
-    "Benhur": {"posicao": "ZAG", "nota": 7, "Presente": "A"},
-    "Provensi": {"posicao": "ZAG", "nota": 5, "Presente": "A"},
-    "Denis": {"posicao": "ATA", "nota": 6, "Presente": "A"},
-    "Hunas": {"posicao": "ATA", "nota": 6, "Presente": "A"},
-    "Dudu": {"posicao": "ATA", "nota": 7, "Presente": "A"},
-    "Fone": {"posicao": "MZA", "nota": 8, "Presente": "A"},
-    "Matheus": {"posicao": "ZAG", "nota": 6, "Presente": "A"},
-    "Thiagão": {"posicao": "ZAG", "nota": 7, "Presente": "A"},
-    "Thiago": {"posicao": "MEI", "nota": 8, "Presente": "A"},
-    "Abdala": {"posicao": "ZAG", "nota": 5, "Presente": "A"},
-    "Guilherme": {"posicao": "ZAG", "nota": 7, "Presente": "A"},
-    "Bruno": {"posicao": "MEI", "nota": 8, "Presente": "A"},
-    "Leo": {"posicao": "ATA", "nota": 9, "Presente": "A"},
-    "Samuel": {"posicao": "ZAG", "nota": 6, "Presente": "A"},
-    "Diego": {"posicao": "MEI", "nota": 7, "Presente": "P"},
+    "Rafael":       {"posicao": "ATA", "nota":  7.5, "pote": "B" ,"Presente": "P"},
+    "Murilo":       {"posicao": "MZA", "nota":  8.0, "pote": "A" ,"Presente": "P"},
+    "Everton":      {"posicao": "ATA", "nota":  5.0, "pote": "C" ,"Presente": "P"},
+    "Victor":       {"posicao": "MZA", "nota":  9.5, "pote": "A" ,"Presente": "P"},
+    "Marlon":       {"posicao": "ZAG", "nota":  4.5, "pote": "C" ,"Presente": "A"},
+    "Cattoni":      {"posicao": "ZAG", "nota":  5.5, "pote": "C" ,"Presente": "A"},
+    "Will":         {"posicao": "MEI", "nota":  8.5, "pote": "A" ,"Presente": "P"},
+    "Paulo":        {"posicao": "MEI", "nota":  8.0, "pote": "A" ,"Presente": "P"},
+    "Cezar":        {"posicao": "MEI", "nota":  7.0, "pote": "B" ,"Presente": "P"},
+    "Recka":        {"posicao": "ATA", "nota":  5.0, "pote": "C" ,"Presente": "A"},
+    "Bruno Rafael": {"posicao": "ZAG", "nota":  5.5, "pote": "C" ,"Presente": "P"},
+    "Filipe":       {"posicao": "MEI", "nota":  8.0, "pote": "B" ,"Presente": "A"},
+    "Pedro Fuzzo":  {"posicao": "MZA", "nota":  8.0, "pote": "B" ,"Presente": "A"},
+    "Pedro K10":    {"posicao": "MZA", "nota":  6.5, "pote": "B" ,"Presente": "P"},
+    "Wellington":   {"posicao": "MEI", "nota":  6.5, "pote": "B" ,"Presente": "A"},
+    "Hagi":         {"posicao": "MZA", "nota":  5.5, "pote": "C" ,"Presente": "P"},
+    "Marcel":       {"posicao": "MEI", "nota":  7.0, "pote": "B" ,"Presente": "A"},
+    "Henrique":     {"posicao": "MZA", "nota":  6.5, "pote": "B" ,"Presente": "A"},
+    "Gustavo":      {"posicao": "MZA", "nota":  7.0, "pote": "B" ,"Presente": "P"},
+    "Guima":        {"posicao": "MZA", "nota":  5.5, "pote": "C" ,"Presente": "P"},
+    "Beto":         {"posicao": "MZA", "nota":  7.0, "pote": "B" ,"Presente": "A"},
+    "Rodrigo":      {"posicao": "MEI", "nota":  7.0, "pote": "B" ,"Presente": "A"},
+    "Benhur":       {"posicao": "ZAG", "nota":  7.0, "pote": "B" ,"Presente": "P"},
+    "Provensi":     {"posicao": "ZAG", "nota":  5.0, "pote": "C" ,"Presente": "A"},
+    "Denis":        {"posicao": "ATA", "nota":  6.0, "pote": "C" ,"Presente": "A"},
+    "Hunas":        {"posicao": "ATA", "nota":  6.0, "pote": "C" ,"Presente": "A"},
+    "Dudu":         {"posicao": "ATA", "nota":  7.0, "pote": "B" ,"Presente": "A"},
+    "Fone":         {"posicao": "MZA", "nota":  8.5, "pote": "A" ,"Presente": "A"},
+    "Matheus":      {"posicao": "ZAG", "nota":  6.0, "pote": "B" ,"Presente": "A"},
+    "Thiagão":      {"posicao": "ZAG", "nota":  7.5, "pote": "A" ,"Presente": "A"},
+    "Thiago":       {"posicao": "MEI", "nota":  8.0, "pote": "A" ,"Presente": "A"},
+    "Abdala":       {"posicao": "ZAG", "nota":  5.5, "pote": "C" ,"Presente": "A"},
+    "Guilherme":    {"posicao": "ZAG", "nota":  7.0, "pote": "C" ,"Presente": "P"},
+    "Bruno":        {"posicao": "MEI", "nota":  8.0, "pote": "A" ,"Presente": "A"},
+    "Leo":          {"posicao": "ATA", "nota":  9.5, "pote": "A" ,"Presente": "A"},
+    "Samuel":       {"posicao": "ZAG", "nota":  6.5, "pote": "C" ,"Presente": "A"},
+    "Diego":        {"posicao": "MEI", "nota":  7.5, "pote": "B" ,"Presente": "P"},
 }
 
 descricao_posicoes = {
@@ -99,16 +102,19 @@ def separar_times(jogadores_presentes):
         if dados["Presente"] == "P"
     }
 
+    num_jogadores_presentes = len(jogadores)
+    num_times = 3 if num_jogadores_presentes >= 15 else 2
+
     # Obter uma lista aleatória de jogadores
     jogadores_aleatorios = list(jogadores.keys())
     random.shuffle(jogadores_aleatorios)
 
     # Inicializar os times
-    times = {"Time 1": {}, "Time 2": {}, "Time 3": {}}
+    times = {f"Time {i+1}": {} for i in range(num_times)}
 
     # Dividir os jogadores aleatórios entre os times
     for idx, jogador in enumerate(jogadores_aleatorios):
-        times[f"Time {idx % 3 + 1}"][jogador] = jogadores[jogador]
+        times[f"Time {idx % num_times + 1}"][jogador] = jogadores[jogador]
 
     # Calcular a soma das notas de cada time
     soma_notas_times = {
@@ -143,13 +149,20 @@ jogadores_presentes, contagem_posicoes = filtrar_jogadores_presentes(jogadores)
 times, soma_notas_times = separar_times(jogadores_presentes)
 
 # Exibir resultados
-print("Jogadores presentes:")
+print(f"Total de jogadores presentes: {len(jogadores_presentes)}")
+
+print("\nJogadores:")
+
 for jogador, dados in jogadores_presentes.items():
     print(
-        f"{jogador} - Posição: {descricao_posicoes[dados['posicao']]}, Nota: {dados['nota']:.2f}"
+        f"{jogador} - Posição: {descricao_posicoes[dados['posicao']]}"
     )
 
-print("\nTimes:")
+if len(jogadores_presentes) < 15:
+    print("\nSerão 2 times:")
+else:
+    print("\nSerão 3 times:")
+
 for time, jogadores_time in times.items():
     print(f"\n{time}:")
     for jogador, dados in jogadores_time.items():
